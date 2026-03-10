@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
+    <button id="btn">End darch shoog hay</button>
+     <h1 id="shoonum">1</h1>
+    <img src="shoo1.png" alt="no image" id="shooimg">
+    <a href="tootaa.html" style="float: inline-end;"><button>End darj too taah togloomruu orno uu</button></a>
+</body>
+<script>
+    let zurag = document.getElementById("shooimg");
+    let too = document.getElementById("shoonum");
+    let btn = document.getElementById("btn");
+    let sum = Number(localStorage.getItem("sum")||0);
+    too.innerText = sum;
+    let count = 0;
+    btn.addEventListener("click", function() {
+        if (count < 6) {
+            let randomNum = Math.floor(Math.random() * 6) + 1;
+            sum += randomNum;
+            zurag.src = `shoo${randomNum}.png`;
+            too.innerText = sum;
+            localStorage.setItem("sum", sum);
+        }
+    });
+    
+</script>
+</html>
